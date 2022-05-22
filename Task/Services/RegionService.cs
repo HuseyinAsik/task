@@ -21,7 +21,7 @@ namespace Task.Services
         {
             try
             {
-                if (region.ParentId == 0 || db.Regions.Any(x => x.Id == region.ParentId) || !db.Regions.Any(x=>x.Name.Trim().ToLower() == region.Name.Trim().ToLower()))
+                if ((region.ParentId == 0 || db.Regions.Any(x => x.Id == region.ParentId)) && !db.Regions.Any(x => x.Name.Replace(" ", string.Empty).ToLower() == region.Name.Replace(" ", string.Empty).ToLower()))
                 {
                     Region newRegion = new Region();
                     newRegion.Name = region.Name;

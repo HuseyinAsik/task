@@ -38,7 +38,7 @@ namespace Task.Services
         {
             try
             {
-                if (db.Regions.Any(x => x.Id == employee.RegionId))
+                if (db.Regions.Any(x => x.Id == employee.RegionId) && !db.Employees.Any(x => x.Name.Replace(" ", string.Empty).ToLower() == employee.Name.Replace(" ", string.Empty) && x.SurName.Replace(" ", string.Empty).ToLower() == employee.SurName.Replace(" ", string.Empty).ToLower() && x.RegionId == employee.RegionId))
                 {
                     Employee newEmployee = new Employee();
                     newEmployee.Name = employee.Name;
