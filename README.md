@@ -1,7 +1,7 @@
 # Task Api
 
 ## Database
-For install database, there is a script for that inside Script folder. Just run this script.
+For install database, there is a backup file for that inside Backup folder. Just restore database via this file.
 
 ## Connect to Database
 For connect to database, there is a section which is called "DefaultConnection" inside appsetting.json. Just change this line with your connection string which is Task database is installed.
